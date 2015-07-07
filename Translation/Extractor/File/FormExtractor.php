@@ -106,7 +106,7 @@ class FormExtractor implements FileVisitorInterface, \PHPParser_NodeVisitor
                     continue;
                 }
 
-                if ('label' !== $item->key->value && 'empty_value' !== $item->key->value && 'choices' !== $item->key->value && 'invalid_message' !== $item->key->value && 'attr' !== $item->key->value ) {
+                if ('label' !== $item->key->value && 'placeholder' !== $item->key->value && 'empty_value' !== $item->key->value && 'choices' !== $item->key->value && 'invalid_message' !== $item->key->value && 'attr' !== $item->key->value ) {
                     continue;
                 }
 
@@ -187,7 +187,7 @@ class FormExtractor implements FileVisitorInterface, \PHPParser_NodeVisitor
         // get doc comment
         $ignore = false;
         $desc = $meaning = $docComment = null;
-	
+
         if ($item->key) {
             $docComment = $item->key->getDocComment();
         }
